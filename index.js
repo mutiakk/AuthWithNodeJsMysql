@@ -15,5 +15,6 @@ app.use(cors());
 const router = require('./routes/router.js');
 app.use('/api', router);
 
+
 // run server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
