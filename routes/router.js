@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 
 const db = require("../lib/db.js");
 const userMiddleware = require("../middleware/users.js");
+const e = require('express');
 
 //http://localhost:3000/api/signup
 router.post('/sign-up', userMiddleware.validateRegister, (req, res, next) => {
@@ -106,6 +107,17 @@ router.post('/login', (req, res, next) => {
   });
 
 //http://localhost:3000/api/secret
-router.post('/secret', (req, res, next) => { });
+router.post('/cart', (req, res, next) => { 
+  
+});
 
+// product
+router.get('/listProduct', (req, res)=>{
+  db.query('SELECT * FROM produk', (err,rows, fields)=>{
+    if (!err)
+    res.send(rows)
+    else
+    console.log(err);
+  })  
+}) 
 module.exports=router;
