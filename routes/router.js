@@ -127,6 +127,7 @@ router.get('/listProduct/:id', (req, res)=>{
   })  
 }) 
 
+//delete product Cart
 router.delete('/cart/:idOrder', (req, res)=>{
   let id= req.params.idOrder;
   db.query('DELETE FROM cart where idOrder=?',[id], (err,rows, fields)=>{
@@ -256,7 +257,4 @@ router.get('/listCart', (req, res)=>{
   })  
 }) 
 
-router.post('user/profile',(req,res)=>{
-  db.query
-})
 module.exports=router;
